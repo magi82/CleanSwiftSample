@@ -10,7 +10,7 @@
 import UIKit
 
 protocol FeedDisplayLogic: class {
-
+  func displayCreate(viewModel: FeedModels.Create.ViewModel)
 }
 
 class FeedViewController: UIViewController {
@@ -55,4 +55,7 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: FeedDisplayLogic {
 
+  func displayCreate(viewModel: FeedModels.Create.ViewModel) {
+    
+  }
 }

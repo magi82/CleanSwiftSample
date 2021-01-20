@@ -10,7 +10,7 @@
 import UIKit
 
 protocol FeedPresentationLogic: class {
-
+  func presentCreate(response: FeedModels.Create.Response)
 }
 
 final class FeedPresenter {
@@ -26,4 +26,18 @@ final class FeedPresenter {
 
 extension FeedPresenter: FeedPresentationLogic {
 
+  func presentCreate(response: FeedModels.Create.Response) {
+    if let error = response.error {
+      self.view?.displayCreate(
+        viewModel: FeedModels.Create.ViewModel(error: error)
+      )
+      return
+    }
+
+    self.view?.displayCreate(
+      viewModel: FeedModels.Create.ViewModel(
+        info: response.title
+      )
+    )
+  }
 }

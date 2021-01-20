@@ -8,18 +8,21 @@
 
 enum FeedModels {
 
-  enum Model {
+  enum Create {
 
     struct Request {
-
+      var title: String?
     }
 
     struct Response {
-
+      var title: String?
+      var nickname: String?
+      var error: Error?
     }
 
     struct ViewModel {
-          
+      var info: String?
+      var error: Error?
     }
   }
 }
